@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  nginx:
+    image: nginx:latest
+    ports:
+      - "9999:80"
+    volumes:
+      - ./html:/usr/share/nginx/html
+      - ./ngnix/domains:/etc/nginx/sites-enabled
+      - ./logs:/var/log/nginx
+      - /opt/docker-ffmucngnix/ngnix/nginx.conf:/etc/nginx/nginx.conf
+    restart: always
